@@ -1,7 +1,7 @@
 {
     "app-id" : "io.github.mpobaschnig.Vaults",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "40",
+    "runtime-version" : "41",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
         "org.freedesktop.Sdk.Extension.rust-stable"
@@ -11,7 +11,7 @@
         "--socket=fallback-x11",
         "--socket=wayland",
         "--device=dri",
-	"--share=ipc",
+        "--share=ipc",
         "--talk-name=org.freedesktop.Flatpak",
         "--filesystem=host"
     ],
@@ -26,6 +26,65 @@
         }
     },
     "modules" : [
+        {
+            "name": "libfuse",
+            "config-opts": [
+                "MOUNT_FUSE_PATH=/app/bin"
+            ],
+            "post-install": [
+                "install fusermount-wrapper.sh /app/bin/fusermount"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/libfuse/libfuse/releases/download/fuse-2.9.9/fuse-2.9.9.tar.gz",
+                    "sha256": "d0e69d5d608cc22ff4843791ad097f554dd32540ddc9bed7638cc6fea7c1b4b5"
+                },
+                {
+                    "type": "file",
+                    "path": "build-aux/fusermount-wrapper.sh"
+                }
+            ]
+        },
+        {
+            "name": "cryfs",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install cryfs-wrapper.sh /app/bin/cryfs"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "path": "build-aux/cryfs-wrapper.sh"
+                }
+            ]
+        },
+        {
+            "name": "cryfs-unmount",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install cryfs-unmount-wrapper.sh /app/bin/cryfs-unmount"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "path": "build-aux/cryfs-unmount-wrapper.sh"
+                }
+            ]
+        },
+            {
+            "name": "gocryptfs",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install gocryptfs-wrapper.sh /app/bin/gocryptfs"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "path": "build-aux/gocryptfs-wrapper.sh"
+                }
+            ]
+        },
         {
             "name" : "libsass",
             "buildsystem" : "meson",
@@ -64,9 +123,9 @@
             ],
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/libadwaita",
-                    "commit" : "14d6e9d65497904e8f5977f57503732845ec4e46"
+                    "type": "archive",
+                    "url": "https://gitlab.gnome.org/GNOME/libadwaita/-/archive/1.0.0.alpha.3/libadwaita-1.0.0.alpha.3.tar.gz",
+                    "sha256": "dfb7397b9d04580707b57431e9d0991d9216b5aca472f108b21a09bbd29910cd"
                 }
             ]
         },
@@ -76,8 +135,8 @@
             "sources" : [
                 {
                     "type": "archive",
-                    "url": "https://github.com/mpobaschnig/Vaults/releases/download/0.1.0/vaults-0.1.0.tar.xz",
-                    "sha256": "8951bf48ecdb0d36af81ed446c0a9e76e7328a5cc9d02696286d05284c9b1341"
+                    "url": "https://github.com/mpobaschnig/Vaults/releases/download/0.2.0/vaults-0.2.0.tar.xz",
+                    "sha256": "e8ac1cfdbe90c3a705ad46762630c94e619e1191592a15ba46b2adaaaeb08e6d_cb"
                 }
             ]
         }
