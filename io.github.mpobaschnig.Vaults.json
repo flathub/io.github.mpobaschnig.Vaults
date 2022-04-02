@@ -1,7 +1,7 @@
 {
     "app-id": "io.github.mpobaschnig.Vaults",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "41",
+    "runtime-version": "42",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.rust-stable"
@@ -86,61 +86,13 @@
             ]
         },
         {
-            "name": "libsass",
-            "buildsystem": "meson",
-            "cleanup": [
-                "*"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/lazka/libsass.git",
-                    "commit": "302397c0c8ae2d7ab02f45ea461c2c3d768f248e"
-                }
-            ]
-        },
-        {
-            "name": "sassc",
-            "buildsystem": "meson",
-            "cleanup": [
-                "*"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/lazka/sassc.git",
-                    "commit": "82803377c33247265d779af034eceb5949e78354"
-                }
-            ]
-        },
-        {
-            "name": "libadwaita",
-            "builddir": true,
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Dprofiling=false",
-                "-Dintrospection=enabled",
-                "-Dgtk_doc=false",
-                "-Dtests=false",
-                "-Dexamples=false",
-                "-Dvapi=false"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://gitlab.gnome.org/GNOME/libadwaita/-/archive/1.0.0.alpha.3/libadwaita-1.0.0.alpha.3.tar.gz",
-                    "sha256": "dfb7397b9d04580707b57431e9d0991d9216b5aca472f108b21a09bbd29910cd"
-                }
-            ]
-        },
-        {
             "name": "vaults",
             "buildsystem": "meson",
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/mpobaschnig/Vaults/releases/download/0.2.1/vaults-0.2.1.tar.xz",
-                    "sha256": "0aeb63babd0d4170b54d8cc9f34395abe8f3ce37d7e3006d1ecfbb6a4e4e936e"
+                    "url": "https://github.com/mpobaschnig/Vaults/releases/download/0.3.0/vaults-0.3.0.tar.xz",
+                    "sha256": "576d3dbcf0325643ed0304997e36543d2e1d90e35003c351bd6c0a0ab926471a"
                 }
             ]
         }
