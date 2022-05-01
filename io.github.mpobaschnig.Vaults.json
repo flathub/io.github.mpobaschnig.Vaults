@@ -13,7 +13,9 @@
         "--device=dri",
         "--share=ipc",
         "--talk-name=org.freedesktop.Flatpak",
-        "--filesystem=host"
+        "--filesystem=host",
+        "--talk-name=org.gtk.vfs.*",
+        "--filesystem=xdg-run/gvfsd"
     ],
     "cleanup": [
         "/include",
