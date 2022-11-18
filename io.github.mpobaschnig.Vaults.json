@@ -100,13 +100,26 @@
             ]
         },
         {
+            "name": "umount",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install umount-wrapper.sh /app/bin/umount"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "path": "build-aux/umount-wrapper.sh"
+                }
+            ]
+        },
+        {
             "name": "vaults",
             "buildsystem": "meson",
             "sources": [
                 {
                     "type": "archive",
                     "url": "https://github.com/mpobaschnig/Vaults/releases/download/0.4.0/vaults-0.4.0.tar.xz",
-                    "sha256": "ac287faf006bbcb9d41fa6ca26f5decaadd85410c85f5334d068ecc1c987693b"
+                    "sha256": "dc2c0d12e078ff8ccb5dd75117418548cd5967a3482c8161d886cf87a93f593f"
                 }
             ]
         }
