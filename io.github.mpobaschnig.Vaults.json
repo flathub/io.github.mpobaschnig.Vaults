@@ -119,8 +119,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/mpobaschnig/vaults/releases/download/0.6.1/vaults-0.6.1.tar.xz",
-                    "sha256": "859483ec01bddd1563438d784051f3f36f2494e06cb207ede78bc52a11d94aec"
+                    "url": "https://github.com/mpobaschnig/vaults/releases/download/0.7.0/vaults-0.7.0.tar.xz",
+                    "sha256": "11b115306d0abf025be44e2781e59a63b14b0a5775b87c19886efc17518b9524"
                 }
             ]
         }
