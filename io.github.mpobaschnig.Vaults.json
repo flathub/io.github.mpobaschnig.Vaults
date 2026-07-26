@@ -1,7 +1,7 @@
 {
   "id": "io.github.mpobaschnig.Vaults",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "49",
+  "runtime-version": "50",
   "sdk": "org.gnome.Sdk",
   "sdk-extensions": [
     "org.freedesktop.Sdk.Extension.rust-stable",
@@ -211,11 +211,14 @@
     {
       "name": "vaults",
       "buildsystem": "meson",
+      "config-opts": [
+        "-Dprofile=default"
+      ],
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/mpobaschnig/vaults/releases/download/0.11.0/vaults-0.11.0.tar.xz",
-          "sha256": "1c866138dd544b3d04dd2f5ea70addcc3f9635a4c9572cba5a71f57dd8699aa1"
+          "url": "https://github.com/mpobaschnig/vaults/releases/download/0.12.0/vaults-0.12.0.tar.xz",
+          "sha256": "ef693a782aff5ebce7c78941dd1133c9dda056416813024f6043a6b4ab71fd82"
         }
       ]
     }
